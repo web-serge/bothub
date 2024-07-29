@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { ChatCompletionRequestMessage } from 'openai-edge'
-import gemini from '../../assets/icon/gemini.png'
-import user from '../../assets/icon/default-avatar.png'
+import gemini from '../../assets/images/icon/gemini.png'
+import user from '../../assets/images/icon/default-avatar.png'
 import { MarkdownRenderer } from '../../components/markdown/markdown.tsx'
 
 type Props = {
@@ -25,7 +25,7 @@ export const Message = ({ isUser, message, className }: MessageProps) => {
     <li
       className={clsx(
         isUser ? 'flex-row-reverse self-end' : 'self-start rounded-bl-none',
-        'animate-new-message flex max-w-[90%] items-center gap-2.5 rounded-3xl delay-300',
+        'flex max-w-[90%] animate-new-message items-center gap-2.5 rounded-3xl delay-300',
         className,
       )}
     >

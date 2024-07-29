@@ -1,5 +1,5 @@
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, memo, useMemo } from 'react'
-import arrow from '../../assets/icon/arrow.svg'
+import arrow from '../../assets/images/icon/arrow.svg'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
 export type Option = {

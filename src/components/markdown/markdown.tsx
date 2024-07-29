@@ -1,7 +1,6 @@
 import { marked } from 'marked'
 import clsx from 'clsx'
 
-// Настройка marked для поддержки XSS защиты
 marked.use({
   breaks: true,
   gfm: true,

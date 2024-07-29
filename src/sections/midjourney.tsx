@@ -1,9 +1,9 @@
-import pc_planet from '../assets/midjourney/pc-planet.png'
-import mobile_planet from '../assets/midjourney/mobile-planet.png'
-import pc_robot from '../assets/midjourney/pc-robot.png'
-import mobile_robot from '../assets/midjourney/mobile-robot.png'
-import pc_cyberpunk from '../assets/midjourney/pc-cyber.png'
-import mobile_cyberpunk from '../assets/midjourney/mobile-cyber.png'
+import pc_planet from '../assets/images/midjourney/pc-planet.png'
+import mobile_planet from '../assets/images/midjourney/mobile-planet.png'
+import pc_robot from '../assets/images/midjourney/pc-robot.png'
+import mobile_robot from '../assets/images/midjourney/mobile-robot.png'
+import pc_cyberpunk from '../assets/images/midjourney/pc-cyber.png'
+import mobile_cyberpunk from '../assets/images/midjourney/mobile-cyber.png'
 import { Wrapper } from '../components/wrapper/wrapper'
 import { Button } from '../components/button/button.tsx'
 
@@ -15,17 +15,22 @@ export const Midjourney = () => {
           <picture>
             <source srcSet={mobile_planet} media="(max-width: 767px)" />
             <source srcSet={pc_planet} media="(min-width: 768px)" />
-            <img src={mobile_planet} alt="planet" />
+            <img src={mobile_planet} alt="planet" loading={'lazy'} />
           </picture>
           <picture>
             <source srcSet={mobile_robot} media="(max-width: 767px)" />
             <source srcSet={pc_robot} media="(min-width: 768px)" />
-            <img src={mobile_robot} alt="robot" className={'absolute left-[60%] top-[-5%]'} />
+            <img src={mobile_robot} alt="robot" className={'absolute left-[60%] top-[-5%]'} loading={'lazy'} />
           </picture>
           <picture>
             <source srcSet={mobile_cyberpunk} media="(max-width: 767px)" />
             <source srcSet={pc_cyberpunk} media="(min-width: 768px)" />
-            <img src={mobile_cyberpunk} alt="cyberpunk" className={'absolute bottom-[-10%] left-[33%]'} />
+            <img
+              src={mobile_cyberpunk}
+              alt="cyberpunk"
+              className={'absolute bottom-[-10%] left-[33%]'}
+              loading={'lazy'}
+            />
           </picture>
         </div>
         <div className={'flex max-w-xl flex-col items-center xl:items-start xl:text-left'}>

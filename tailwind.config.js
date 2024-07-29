@@ -10,6 +10,9 @@ export default {
         xl: 0,
       },
     },
+    backgroundSize: {
+      gridSize: '60px 60px',
+    },
     extend: {
       keyframes: {
         'new-message': {
@@ -27,11 +30,11 @@ export default {
         'new-message': 'new-message 1s ease-in-out',
       },
       backgroundImage: {
-        'bg-grid': 'url(./src/assets/bg-grid.svg)',
         'elipse-blue': 'url(./src/assets/ellipse-blue.png)',
         'elipse-pink': 'url(./src/assets/ellipse-pink.png)',
         'custom-radial-top-left': 'radial-gradient(circle at top left, #1C64F2 -90%, #121825 75%)',
         'custom-radial-top-center': 'radial-gradient(circle at top, #1C64F2 -165%, #121825 30%)',
+        grid: 'linear-gradient(#27519b99, transparent 1px), linear-gradient(90deg, #27519b80, transparent 1px)',
         gradient: 'linear-gradient(to right, #1C64F2 8%, #121825 100%)',
       },
       width: {
@@ -39,6 +42,7 @@ export default {
       },
       colors: {
         dark: '#0E0C15',
+        white: '#fff',
         primary: '#1C64F2',
         'gray-1': '#616D8D',
         'gray-2': '#313E62',

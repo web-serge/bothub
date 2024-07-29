@@ -1,5 +1,5 @@
-import logo from '../../assets/logo.svg'
-import bird from '../../assets/icon/bird.svg'
+import logo from '../../assets/images/logo.svg'
+import bird from '../../assets/images/icon/bird.svg'
 import { Wrapper } from '../wrapper/wrapper.tsx'
 import { FooterLinks } from './footerLinks/footerLinks.tsx'
 

@@ -1,13 +1,13 @@
 import { Button } from '../../components/button/button'
-import send from '../../assets/icon/telegram.svg'
-import mask from '../../assets/Maskgroup.png'
+import send from '../../assets/images/icon/telegram.svg'
+import mask from '../../assets/images/Maskgroup.png'
 import { ChangeEvent, useRef, useState } from 'react'
 import { ChatCompletionRequestMessage } from 'openai-edge'
 import { queryChatbot } from '../../api/api-openai'
 import { useMutation } from '@tanstack/react-query'
 import { Messages } from './messages'
 import { Spinner } from '../../components/spinner/spinner.tsx'
-import gemini from '../../assets/icon/gemini.png'
+import gemini from '../../assets/images/icon/gemini.png'
 
 export const Chat = () => {
   const [state, setState] = useState<ChatCompletionRequestMessage[]>([])

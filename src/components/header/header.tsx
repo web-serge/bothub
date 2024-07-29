@@ -1,24 +1,24 @@
-import logo from '../../assets/logo.svg'
-import arrow from '../../assets/icon/arrow.svg'
+import logo from '../../assets/images/logo.svg'
+import arrow from '../../assets/images/icon/arrow.svg'
 import { Wrapper } from '../wrapper/wrapper'
 import { Button } from '../button/button.tsx'
 import { Select } from '../select/select.tsx'
-import lang from '../../assets/icon/lang.svg'
-import telegramm from '../../assets/icon/telegram.svg'
-import portfolio from '../../assets/icon/portfolio.svg'
-import agregator from '../../assets/icon/agregator.svg'
+import lang from '../../assets/images/icon/lang.svg'
+import telegram from '../../assets/images/icon/telegram.svg'
+import portfolio from '../../assets/images/icon/portfolio.svg'
+import aggregator from '../../assets/images/icon/agregator.svg'
 import { useState } from 'react'
 import clsx from 'clsx'
-import { NavItem } from './navItem.tsx'
+import { NavItem } from './navItem/navItem.tsx'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className={'border-gray-3 w-full border-b bg-[#121825] py-5'}>
+    <header className={'w-full border-b border-gray-3 bg-[#121825] py-5'}>
       <Wrapper className={'flex items-center justify-between'}>
         <div className={'flex'}>
-          <img src={logo} alt="logo" className={'md:border-gray-3 pr-6 md:border-r'} />
+          <img src={logo} alt="logo" className={'pr-6 md:border-r md:border-gray-3'} />
           <nav className={'ml-6 hidden lg:flex'}>
             <ul className={'flex items-center gap-8'}>
               <li className={'relative'}>
@@ -38,12 +38,12 @@ export const Header = () => {
                       }
                     >
                       <NavItem
-                        icon={agregator}
+                        icon={aggregator}
                         title={'Агрегатор нейросетей BotHub'}
                         subtitle={'ChatGPT на базе 3.5 и 4.0 версии OpenAI'}
                       />
                       <NavItem
-                        icon={telegramm}
+                        icon={telegram}
                         title={'Telegram бот'}
                         subtitle={'Удобный бот в Telegram который всегда под рукой'}
                       />

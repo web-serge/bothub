@@ -4,7 +4,7 @@ import { Button } from '../components/button/button.tsx'
 
 export const ChatGPT = () => {
   return (
-    <section className={'bg-dark bg-bg-grid py-[54px] md:py-[66px] xl:py-[119px]'}>
+    <section className={'md:bg-grid md:bg-gridSize bg-dark py-[54px] md:bg-bottom md:py-[66px] xl:py-[119px]'}>
       <Wrapper className={'flex flex-col items-center justify-between gap-7 xl:flex-row'}>
         <div className={'flex flex-col items-center gap-y-10 xl:max-w-[509px] xl:items-start'}>
           <h1 className={'text-7 md:text-[40px] xl:text-[46px]'}>ChatGPT: ваш умный помощник</h1>
