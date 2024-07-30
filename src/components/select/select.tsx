@@ -42,7 +42,9 @@ const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProp
       <SelectPrimitive.Trigger
         id={'1'}
         ref={ref}
-        className={'group mr-[34px] flex items-center rounded-[10px] px-4 py-3.5 focus-visible:outline-primary'}
+        className={
+          'group mr-[24px] flex items-center rounded-[10px] px-4 py-3.5 focus-visible:outline-primary md:mr-[34px]'
+        }
       >
         <SelectPrimitive.Value placeholder={placeholder} />
         <SelectPrimitive.Icon className={'ml-3 flex items-center transition-[0.3s] group-aria-expanded:scale-[-1]'}>
