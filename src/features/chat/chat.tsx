@@ -1,7 +1,7 @@
 import { Button } from '../../components/button/button'
 import send from '../../assets/images/icon/telegram.svg'
 import mask from '../../assets/images/Maskgroup.png'
-import { ChangeEvent, useRef, useState } from 'react'
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { ChatCompletionRequestMessage } from 'openai-edge'
 import { queryChatbot } from '../../api/api-openai'
 import { useMutation } from '@tanstack/react-query'
@@ -13,7 +13,6 @@ export const Chat = () => {
   const [state, setState] = useState<ChatCompletionRequestMessage[]>([])
   const [isContext, setIsContext] = useState(true)
   const messageRef = useRef<HTMLTextAreaElement | null>(null)
-  const containerRef = useRef<HTMLDivElement | null>(null)
   const toggleContext = (e: ChangeEvent<HTMLInputElement>) => {
     setIsContext(e.currentTarget.checked)
   }
@@ -43,6 +42,19 @@ export const Chat = () => {
     } else return
   }
 
+  const bottomRef = useRef<HTMLDivElement | null>(null)
+
+  const scrollToBottom = () => {
+    bottomRef.current!.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [state, isPending])
+
   return (
     <div className={'relative w-full grow rounded-3xl bg-gray-4'}>
       <div
@@ -69,10 +81,11 @@ export const Chat = () => {
             <img src={gemini} alt="gemini" className={'flex-shrink-0'} /> <Spinner text={'Gemini генерирует...'} />
           </li>
         )}
-        <div ref={containerRef}></div>
+        <div ref={bottomRef}></div>
       </ol>
       <div className={'relative p-6'}>
         <textarea
+          autoFocus
           role={'textbox'}
           ref={messageRef}
           className={
