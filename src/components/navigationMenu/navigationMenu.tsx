@@ -1,6 +1,6 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu'
-import arrow from '../../assets/images/icon/arrow.svg'
 import { link } from '../header/header.tsx'
+import { ArrowDown } from '../icons'
 
 type Props = {
   links: link[]
@@ -11,8 +11,7 @@ export const Menu = ({ links }: Props) => (
     <NavigationMenu.List className={'ml-6 hidden lg:flex lg:gap-x-[34px]'}>
       <NavigationMenu.Item>
         <NavigationMenu.Trigger className={'group flex items-center justify-between gap-x-2'}>
-          <span>Продукты</span>{' '}
-          <img src={arrow} alt="arrow" className={'transition-[0.3s] group-aria-expanded:scale-[-1]'} />{' '}
+          <span>Продукты</span> <ArrowDown className={'transition-[0.3s] group-aria-expanded:scale-[-1]'} />
         </NavigationMenu.Trigger>
         <NavigationMenu.Content>
           <ul
@@ -22,10 +21,8 @@ export const Menu = ({ links }: Props) => (
           >
             {links.map((link) => {
               return (
-                <NavigationMenu.Link className={'flex cursor-pointer items-center gap-3.5'}>
-                  <div className={'shrink-0 rounded-[10px] bg-gradient-to-r from-primary to-[#D41CF2] p-2'}>
-                    <img src={link.icon} alt={link.title} className={'w-5'} />
-                  </div>
+                <NavigationMenu.Link key={link.title} className={'flex cursor-pointer items-center gap-3.5'}>
+                  {link.icon}
                   <div>
                     <span className={'block text-nowrap text-sm font-semibold'}>{link.title}</span>
                     <span className={'text-[10px]'}>{link.subtitle}</span>

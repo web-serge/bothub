@@ -14,7 +14,7 @@ export const Button = <T extends ElementType = 'button'>(props: ButtonProps<T>) 
 
   const s = {
     button:
-      'font-medium leading-5 text-[15px] cursor-pointer  rounded-lg z-10 disabled:pointer-events-none disabled:bg-stone-300',
+      'font-medium leading-5 text-[15px] cursor-pointer  rounded-lg z-10 disabled:pointer-events-none disabled:bg-gray-2 disabled:text-gray-1 hover:bg-accent-strong  active:bg-accent-strong-down transition-[0.3s]',
     icon: 'p-2.5 bg-primary',
     primary: 'py-2.5 px-[18px] bg-primary',
     fullWidth: 'w-full',

@@ -1,6 +1,6 @@
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, memo, useMemo } from 'react'
-import arrow from '../../assets/images/icon/arrow.svg'
 import * as SelectPrimitive from '@radix-ui/react-select'
+import { ArrowDown } from '../icons'
 
 export type Option = {
   label: string
@@ -40,7 +40,6 @@ const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProp
   return (
     <SelectPrimitive.Root defaultValue={options[0].value} {...restProps}>
       <SelectPrimitive.Trigger
-        id={'1'}
         ref={ref}
         className={
           'group mr-[24px] flex items-center rounded-[10px] px-4 py-3.5 focus-visible:outline-primary md:mr-[34px]'
@@ -48,7 +47,7 @@ const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProp
       >
         <SelectPrimitive.Value placeholder={placeholder} />
         <SelectPrimitive.Icon className={'ml-3 flex items-center transition-[0.3s] group-aria-expanded:scale-[-1]'}>
-          <img src={arrow} alt="arrow" />
+          <ArrowDown />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
       <SelectPrimitive.Portal>

@@ -1,8 +1,7 @@
 import clsx from 'clsx'
 import { ChatCompletionRequestMessage } from 'openai-edge'
-import gemini from '../../assets/images/icon/gemini.png'
-import user from '../../assets/images/icon/default-avatar.png'
 import { MarkdownRenderer } from '../../components/markdown/markdown.tsx'
+import { DefaultAvatar, Gemini } from '../../components/icons'
 
 type Props = {
   data: ChatCompletionRequestMessage[]
@@ -29,7 +28,11 @@ export const Message = ({ isUser, message, className }: MessageProps) => {
         className,
       )}
     >
-      <img src={isUser ? user : gemini} alt={isUser ? 'user' : 'assistant'} className={'self-end'} />
+      {isUser ? (
+        <DefaultAvatar className={'self-end'} width={40} height={40} viewBox={'0 0 33 33'} />
+      ) : (
+        <Gemini className={'self-end'} width={40} height={40} viewBox={'0 0 24 24'} />
+      )}
       <div>
         {isUser && (
           <span className={'flex w-full items-center gap-2.5 rounded-3xl rounded-br-none bg-primary px-4 py-3.5'}>

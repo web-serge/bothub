@@ -5,7 +5,9 @@ export const Possibilities = () => {
   return (
     <section className={'bg-dark'}>
       <Wrapper>
-        <h2 className={'-translate-y-6 text-center text-[34px] font-semibold'}>Возможности ChatGPT</h2>
+        <h2 className={'text-6 -translate-y-6 text-center font-semibold md:text-[30px] xl:text-[34px]'}>
+          Возможности ChatGPT
+        </h2>
         <Cards />
       </Wrapper>
     </section>

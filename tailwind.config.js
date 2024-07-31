@@ -44,6 +44,8 @@ export default {
         dark: '#0E0C15',
         white: '#fff',
         primary: '#1C64F2',
+        'accent-strong': '#073CA4',
+        'accent-strong-down': '#0E3176',
         'gray-1': '#616D8D',
         'gray-2': '#313E62',
         'gray-3': '#222B44',
