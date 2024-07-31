@@ -21,7 +21,7 @@ export const Header = () => {
     <header className={'w-full border-b border-gray-3 bg-[#121825] py-5'}>
       <Wrapper className={'flex items-center justify-between'}>
         <div className={'flex'}>
-          <a href="/">
+          <a href="/" aria-label="Go to homepage">
             <LogoDark />
           </a>
           <Menu links={links} />

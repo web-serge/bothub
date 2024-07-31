@@ -50,7 +50,7 @@ export const FooterLinks = () => {
       {columns.map((column) => {
         return (
           <div key={column.title} className={'flex flex-col gap-y-5'}>
-            <h6 className={'font-semibold text-gray-1'}>{column.title}</h6>
+            <h4 className={'font-semibold text-gray-1'}>{column.title}</h4>
             <nav>
               <ul className={'flex flex-col gap-y-5'}>
                 {column.links.map((link) => {

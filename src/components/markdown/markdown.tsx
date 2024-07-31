@@ -10,6 +10,8 @@ type Markdown = {
   markdown: string
 }
 export const MarkdownRenderer = ({ markdown }: Markdown) => {
+  if (!markdown) return
+
   const createMarkup = () => {
     return { __html: marked(markdown) }
   }

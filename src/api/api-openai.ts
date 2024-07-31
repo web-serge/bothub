@@ -12,6 +12,5 @@ export const queryChatbot = async (messages: ChatCompletionRequestMessage[]): Pr
     model: 'gemini-pro',
   })
   const message = (await completion.json()).choices[0].message
-
   return message
 }

@@ -8,7 +8,7 @@ type Props = {
   className?: string
 }
 export const Messages = ({ className, data }: Props) => {
-  return data.map((message, index) => {
+  return data?.map((message, index) => {
     const isUser = message.role === 'user'
     return <Message key={index} isUser={isUser} className={className} message={message.content!} />
   })
@@ -19,6 +19,7 @@ type MessageProps = {
   className?: string
   message: string
 }
+
 export const Message = ({ isUser, message, className }: MessageProps) => {
   return (
     <li

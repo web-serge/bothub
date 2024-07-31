@@ -24,7 +24,6 @@ export const Chat = () => {
         setState((prev) => [...prev, answer])
         messageRef.current!.focus()
       } catch (error) {
-        console.log(error)
         const errorMessage = error instanceof Error ? error.message : 'Some error'
         toast.error(errorMessage)
       }
@@ -32,6 +31,9 @@ export const Chat = () => {
   })
 
   const handleSendMessage = () => {
+    if (messageRef.current?.value.trim() === '') {
+      return toast.warning('Пожалуйста, введите сообщение перед отправкой.')
+    }
     if (messageRef.current) {
       const content = messageRef.current.value
       const body: ChatCompletionRequestMessage[] = isContext
@@ -76,7 +78,10 @@ export const Chat = () => {
           <input type="checkbox" checked={isContext} onChange={toggleContext} />
         </label>
       </div>
-      <ol className={'flex h-[359px] flex-col items-baseline gap-[22px] overflow-y-auto px-6 py-[18px] md:h-[421px]'}>
+      <ol
+        className={'flex h-[359px] flex-col items-baseline gap-[22px] overflow-y-auto px-6 py-[18px] md:h-[421px]'}
+        role={'list'}
+      >
         {<Messages data={state} />}
         {isPending && (
           <li className={'flex max-w-[90%] items-end gap-2.5 self-start rounded-3xl rounded-bl-none'}>
@@ -100,6 +105,7 @@ export const Chat = () => {
           className={'absolute right-11 top-1/2 -translate-y-1/2'}
           onClick={handleSendMessage}
           disabled={isPending}
+          aria-label="Send message"
         >
           <Send />
         </Button>
