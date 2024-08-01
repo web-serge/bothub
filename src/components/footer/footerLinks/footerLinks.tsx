@@ -30,7 +30,7 @@ const columns: Column[] = [
     title: 'Ссылки',
     links: [
       { href: '', text: 'Сообщество в телеграм', icon: <Send /> },
-      { href: '', text: 'Телеграм бот', icon: <BothubAvatarSmall width={18} /> },
+      { href: '', text: 'Телеграм бот', icon: <BothubAvatarSmall width={18} height={18} /> },
       { href: 'mailto:email@bothub.chat', text: 'email@bothub.chat', icon: <Email /> },
     ],
   },
@@ -55,12 +55,13 @@ export const FooterLinks = () => {
               <ul className={'flex flex-col gap-y-5'}>
                 {column.links.map((link) => {
                   return (
-                    <li key={link.text}>
-                      <a
-                        href={link.href}
-                        className={'flex items-center gap-x-2 text-nowrap transition-[0.3s] hover:opacity-70'}
-                      >
-                        {link.icon}
+                    <li key={link.text} className="hover:text-primary">
+                      <a href={link.href} className={'group flex items-center gap-x-2 text-nowrap duration-150'}>
+                        {link.icon && (
+                          <span className="flex flex-shrink-0 items-center justify-center rounded-full bg-white p-[5px] text-black duration-150 group-hover:bg-primary">
+                            {link.icon}
+                          </span>
+                        )}
                         {link.text}
                       </a>
                     </li>

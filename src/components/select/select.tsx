@@ -1,4 +1,4 @@
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, memo, useMemo } from 'react'
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, memo, ReactNode, useMemo } from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { ArrowDown } from '../icons'
 
@@ -6,20 +6,21 @@ export type Option = {
   label: string
   value: string
 }
-const optionss = [
+
+const defaultOptions = [
   { value: 'RU', label: 'RU' },
   { value: 'EN', label: 'EN' },
-  { value: 'ES', label: 'ES' },
-  { value: 'DE', label: 'DE' },
 ]
+
 export type SelectProps = {
   className?: string
   options?: Option[]
   placeholder?: string
+  icon?: ReactNode
 } & Omit<ComponentPropsWithoutRef<typeof SelectPrimitive.Root>, 'children'>
 
 const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProps>((props, ref) => {
-  const { options = optionss, placeholder, ...restProps } = props
+  const { options = defaultOptions, placeholder, icon, ...restProps } = props
 
   const items = useMemo(
     () =>
@@ -28,7 +29,7 @@ const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProp
           <SelectPrimitive.Item
             key={option.value}
             value={option.value}
-            className={'cursor-pointer hover:opacity-70 focus:opacity-70'}
+            className="cursor-pointer outline-none duration-150 hover:text-primary focus:text-primary"
           >
             <SelectPrimitive.ItemText>{option.label}</SelectPrimitive.ItemText>
           </SelectPrimitive.Item>
@@ -41,13 +42,12 @@ const SelectRaw = forwardRef<ElementRef<typeof SelectPrimitive.Root>, SelectProp
     <SelectPrimitive.Root defaultValue={options[0].value} {...restProps}>
       <SelectPrimitive.Trigger
         ref={ref}
-        className={
-          'group mr-[24px] flex items-center rounded-[10px] px-4 py-3.5 focus-visible:outline-primary md:mr-[34px]'
-        }
+        className="group flex items-center gap-x-1.5 rounded-[10px] outline-none duration-150 hover:text-primary focus:text-primary"
         aria-label={'language selection'}
       >
+        {icon}
         <SelectPrimitive.Value placeholder={placeholder} />
-        <SelectPrimitive.Icon className={'ml-3 flex items-center transition-[0.3s] group-aria-expanded:scale-[-1]'}>
+        <SelectPrimitive.Icon className="flex items-center transition-transform duration-150 group-aria-expanded:scale-[-1]">
           <ArrowDown />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>

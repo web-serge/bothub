@@ -30,9 +30,9 @@ export const Message = ({ isUser, message, className }: MessageProps) => {
       )}
     >
       {isUser ? (
-        <DefaultAvatar className={'self-end'} width={40} height={40} viewBox={'0 0 33 33'} />
+        <DefaultAvatar className={'flex-shrink-0 self-end'} width={40} height={40} viewBox={'0 0 33 33'} />
       ) : (
-        <Gemini className={'self-end'} width={40} height={40} viewBox={'0 0 24 24'} />
+        <Gemini className={'flex-shrink-0 self-end'} width={40} height={40} viewBox={'0 0 24 24'} />
       )}
       <div>
         {isUser && (

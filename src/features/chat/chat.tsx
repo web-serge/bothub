@@ -95,9 +95,7 @@ export const Chat = () => {
         <textarea
           role={'textbox'}
           ref={messageRef}
-          className={
-            'h-max w-full resize-none rounded-[10px] border border-gray-2 bg-transparent pl-5 pr-[72px] pt-6 leading-[133%] placeholder:text-[12px] lg:placeholder:text-sm'
-          }
+          className="h-max w-full resize-none rounded-[10px] border border-gray-2 bg-transparent pl-5 pr-[72px] pt-6 leading-[133%] outline-none placeholder:text-[12px] focus-visible:border-primary lg:placeholder:text-sm"
           placeholder={'Спроси о чем-нибудь...'}
         />
         <Button

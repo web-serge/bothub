@@ -7,7 +7,9 @@ export const Footer = () => {
     <footer className={'bg-custom-radial-top-center py-16'}>
       <Wrapper className={'flex flex-col gap-y-9 md:justify-between xl:flex-row'}>
         <div className={'flex flex-col gap-y-3'}>
-          <LogoLight className={'mb-1.5'} />
+          <a href="/" aria-label="Go to homepage" className="self-start">
+            <LogoLight className={'mb-1.5'} />
+          </a>
           <span>ООО «Ботхаб» ОГРН 1236300016259</span>
           <span>@BotHub 2023</span>
           <span>Пользовательское соглашение</span>
